@@ -6,8 +6,6 @@
 #define LED0_PIN                PE12
 #define LED1_PIN                PE13
 
-#define BEEPER                  PA10
-
 // *************** SPI *****************
 #define USE_SPI
 #define USE_SPI_DEVICE_1 // GYRO 1
@@ -74,44 +72,44 @@
 // *************** ADC *****************
 #define USE_ADC
 #define ADC_INSTANCE            ADC1
-#define ADC1_DMA_STREAM         DMA2_Stream0
+#define ADC_CHANNEL_1_PIN       PC0
+#define ADC_CHANNEL_2_PIN       PC1
+#define ADC_CHANNEL_3_PIN       PC4
 
-#define VBAT_ADC_PIN            PC0
-#define CURRENT_METER_ADC_PIN   PC1
-#define RSSI_ADC_PIN            PC4
+// *************** BUS *****************
+#define GYRO1_SPI_BUS           BUS_SPI1
+#define GYRO1_CS_PIN            PA4
+#define GYRO2_SPI_BUS           BUS_SPI4
+#define GYRO2_CS_PIN            PE4
 
-// *************** GYRO / ACCEL *****************
+#define BARO_I2C_BUS            BUS_I2C2
+#define MAG_I2C_BUS             BUS_I2C1
+
+#define MAX7456_SPI_BUS         BUS_SPI2
+#define MAX7456_CS_PIN          PB12
+
+#define FLASH_CS_PIN            PA15
+#define FLASH_SPI_BUS           BUS_SPI3
+
+// *************** IMU *****************
+#define USE_EXTI
 #define USE_IMU_ICM42688P
 #define USE_IMU_MPU6000
-#define USE_IMU_BMI270
+#define IMU_ICM42688_ALIGN      CW270_DEG
 
-#define IMU_CS_PIN              PA4
-#define IMU_SPI_INSTANCE        SPI1
-#define IMU_EXTI_PIN            PE9
-
-// *************** BARO / COMPASS *****************
+// *************** BARO / COMPASS ***************
 #define USE_BARO
 #define USE_BARO_BMP280
-#define BARO_I2C_INSTANCE       I2C2
 
 #define USE_MAG
-#define MAG_I2C_INSTANCE        I2C1
+#define USE_MAG_HMC5883
+#define USE_MAG_QMC5883
 
-// *************** OSD *****************
+// *************** OSD E FLASH *****************
 #define USE_MAX7456
-#define MAX7456_SPI_INSTANCE    SPI2
-#define MAX7456_SPI_CS_PIN      PB12
-#define MAX7456_SPI_CLK         (SPI_CLOCK_STANDARD)
-
-// *************** FLASH *****************
 #define USE_FLASHFS
 #define USE_FLASH_M25P16
-#define FLASH_SPI_INSTANCE      SPI3
-#define FLASH_CS_PIN            PA15
 
-#define DEFAULT_FEATURES        (FEATURE_OSD)
 #define TARGET_HSE_HZ           8000000
-
 #define WS2811_PIN              PB8
 #define TARGET_MOTOR_COUNT      8
-#define USE_SERIAL_4WAY_BLHELI_INTERFACE
