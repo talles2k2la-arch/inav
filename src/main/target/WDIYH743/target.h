@@ -113,3 +113,10 @@
 #define TARGET_HSE_HZ           8000000
 #define WS2811_PIN              PB8
 #define TARGET_MOTOR_COUNT      8
+
+// Ativacao oficial das pernas de energia do STM32H743 para o Inav
+#define TARGET_IO_PORTA (0xffff & ~(BIT(14) | BIT(13)))
+#define TARGET_IO_PORTB 0xffff
+#define TARGET_IO_PORTC 0xffff
+#define TARGET_IO_PORTD 0xffff
+#define TARGET_IO_PORTE 0xffff
