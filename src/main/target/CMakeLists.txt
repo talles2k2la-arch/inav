@@ -5,4 +5,4 @@ foreach(subdir ${entries})
         add_subdirectory(${subdir})
     endif()
 endforeach()
-src/main/target/CMakeLists.txt
+add_target_config(WDIYH743 default)
